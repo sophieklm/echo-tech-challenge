@@ -1,7 +1,9 @@
-function getForm(string){
+var exports = module.exports = {};
+
+exports.getForm = function(string) {
   var result = containsAny(string, formTypes());
   return result;
-}
+};
 
 function containsAny(string, formTypes) {
     for (var i = 0; i != formTypes.length; i++) {

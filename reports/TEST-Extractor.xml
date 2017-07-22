@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+<testsuite name="Extractor" errors="0" tests="0" failures="0" time="0" timestamp="2017-07-22T18:56:25">
+</testsuite>
+<testsuite name="Extractor.getForm" errors="0" tests="3" failures="0" time="0.005" timestamp="2017-07-22T18:56:25">
+  <testcase classname="Extractor.getForm" name="gets the form of a cream" time="0.004"></testcase>
+  <testcase classname="Extractor.getForm" name="gets the form of an oral solution" time="0.001"></testcase>
+  <testcase classname="Extractor.getForm" name="returns null if the type is unknown" time="0"></testcase>
+</testsuite>
+</testsuites>

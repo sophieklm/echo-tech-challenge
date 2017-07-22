@@ -2,15 +2,23 @@
 
 ## Testing and Usage
 
-To access the files:
+To install the correct files:
 
 ```
 $ git clone https://github.com/sophieklm/echo-tech-challenge.git
 $ cd echo-tech-challenge
+$ npm install
 ```
-To run tests:
+To run tests, use either of the following commands:
 ```
-Open in browser path/to/SpecRunner.html
+$ jasmine
+$ npm test
+```
+To run the functions in the terminal:
+```
+$ node
+$ var extractor = require('./src/getFormFunction')
+$ extractor.getForm('Evening primrose oil 20% cream')
 ```
 
 ## Instructions
