@@ -1,6 +1,6 @@
 # Echo Tech Challenge
 
-## Testing and Usage
+## How to Use
 
 To install the correct files:
 
@@ -17,11 +17,13 @@ $ npm test
 To run the functions in the terminal:
 ```
 $ node
-$ var extractor = require('./src/getFormFunction')
+$ var extractor = require('./src/extractorFunctions')
 $ extractor.getForm('Evening primrose oil 20% cream')
+$ extractor.getStrength('Oxcarbazepine 600mg tablets')
+$ extractor.getStrength(`Candesartan 4mg/5ml oral solution`)
 ```
 
-## Instructions
+## The Task
 
 We use a large data set called the DM&D (Dictionary of Medicines and Devices) which contains all the medication we can offer to patients. At the bottom of this file is a small list of drug names from that data set you can use for testing your solution to this challenge.
 
