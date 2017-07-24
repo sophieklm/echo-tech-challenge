@@ -6,24 +6,16 @@ exports.getStrength = function(string) {
 };
 
 function strength(string) {
-    this.numerator_value = set_numerator_value(string);
+    this.numerator_value = set_value(string, 'numerator');
     this.numerator_unit = null;
-    this.denominator_value = set_denominator_value(string);
+    this.denominator_value = set_value(string, 'denominator');
     this.demoninator_unit = null;
 }
 
-function set_numerator_value(string) {
-  if (extract_numbers(string)) {
-    return extract_numbers(string)[0];
-  }
-  else {
-    return null;
-  }
-}
-
-function set_denominator_value(string) {
-  if (extract_numbers(string)) {
-    return extract_numbers(string)[extract_numbers(string).length-1];
+function set_value(string, type) {
+  var numbers = extract_numbers(string);
+  if (numbers) {
+    return get_value(numbers, type);
   }
   else {
     return null;
@@ -38,6 +30,15 @@ function extract_numbers(string) {
   }
 }
 
-function set_numerator_unis(string) {
+function get_value(array, type) {
+  if (type == 'denominator') {
+    return array[array.length-1];
+  }
+  else if (type == 'numerator') {
+    return array[0];
+  }
+}
+
+function extract_units(string) {
   return string.replace( /(^.+\D)(\d+)(\D.+$)/i,'$2');
 }
