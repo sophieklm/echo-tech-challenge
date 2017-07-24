@@ -17,7 +17,7 @@ $ npm test
 To run the functions in the terminal:
 ```
 $ node
-$ var extractor = require('./src/extractorFunctions')
+$ var extractor = require('./main')
 $ extractor.getForm('Evening primrose oil 20% cream')
 $ extractor.getStrength('Oxcarbazepine 600mg tablets')
 $ extractor.getStrength(`Candesartan 4mg/5ml oral solution`)
