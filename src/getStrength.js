@@ -1,26 +1,27 @@
 var exports = module.exports = {};
 
 exports.getStrength = function(string) {
-  var object = new strength(string);
+  var object = new Strength(string);
   return object;
 };
 
-function strength(string) {
-    this.numerator_value = set_value(string, 'numerator');
+function Strength(string) {
+    this.numerator_value = null;
     this.numerator_unit = null;
-    this.denominator_value = set_value(string, 'denominator');
+    this.denominator_value = null;
     this.demoninator_unit = null;
+    this.setStrength(string);
 }
 
-function set_value(string, type) {
+Strength.prototype.setStrength = function(string) {
   var numbers = extract_numbers(string);
+  if (numbers && numbers.length > 1) {
+    this.denominator_value = numbers[numbers.length-1];
+  }
   if (numbers) {
-    return get_value(numbers, type);
+    this.numerator_value = numbers[0];
   }
-  else {
-    return null;
-  }
-}
+};
 
 function extract_numbers(string) {
   var regex = /[+-]?\d+(\.\d+)?/g;
@@ -28,17 +29,4 @@ function extract_numbers(string) {
   if (floats) {
     return floats.map(function(v) { return parseFloat(v); });
   }
-}
-
-function get_value(array, type) {
-  if (type == 'denominator') {
-    return array[array.length-1];
-  }
-  else if (type == 'numerator') {
-    return array[0];
-  }
-}
-
-function extract_units(string) {
-  return string.replace( /(^.+\D)(\d+)(\D.+$)/i,'$2');
 }

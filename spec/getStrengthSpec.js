@@ -28,7 +28,7 @@ describe("getStrength", function() {
       expect(extractor.getStrength('NatraVits Vitamin B Complex tablets').numerator_unit).toEqual(null);
     });
 
-    it('only returns first digit if denominator present', function() {
+    it('only returns first digit for numerator if denominator also present', function() {
       expect(extractor.getStrength('Indometacin 5mg/5ml oral solution').numerator_value).toEqual(5);
     });
 
