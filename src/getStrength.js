@@ -1,4 +1,5 @@
 var exports = module.exports = {};
+var regex = /[+-]?\d+(\.\d+)?/g;
 
 exports.getStrength = function(string) {
   var object = new Strength(string);
@@ -26,7 +27,7 @@ Strength.prototype.setStrength = function(string) {
 };
 
 Strength.prototype.setDenominator = function(numbers, units) {
-  this.denominator_value = numbers[numbers.length-1];
+  this.denominator_value = numbers[1];
   this.denominator_unit = units;
 };
 
@@ -36,7 +37,6 @@ Strength.prototype.setNumerator = function(numbers, units) {
 };
 
 function extractNumbers(string) {
-  var regex = /[+-]?\d+(\.\d+)?/g;
   var floats = string.match(regex);
   if (floats) {
     return floats.map(function(v) { return parseFloat(v); });
@@ -44,6 +44,5 @@ function extractNumbers(string) {
 }
 
 function extractUnits(string, position) {
-  var regex = /[+-]?\d+(\.\d+)?/g;
   return string.split(regex)[position].split(/[ \/]+/).shift();
 }
