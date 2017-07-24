@@ -14,13 +14,17 @@ To run tests, use either of the following commands:
 $ jasmine
 $ npm test
 ```
-To run the functions in the terminal:
+To run the functions with a list of drugs, input data into files/drugs.txt and use the following command in the terminal:
+```
+$ node main.js
+```
+Or run each function individually with node in terminal:
 ```
 $ node
-$ var extractor = require('./main')
-$ extractor.getForm('Evening primrose oil 20% cream')
-$ extractor.getStrength('Oxcarbazepine 600mg tablets')
-$ extractor.getStrength(`Candesartan 4mg/5ml oral solution`)
+$ var formExtractor = require('./src/getForm')
+$ formExtractor.getForm('Evening primrose oil 20% cream')
+$ var strengthExtractor = require('./src/getStrength')
+$ strengthExtractor.getStrength(`Candesartan 4mg/5ml oral solution`)
 ```
 
 ## The Task
